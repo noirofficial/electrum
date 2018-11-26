@@ -385,6 +385,15 @@ class Zaif(ExchangeBase):
         json = await self.get_json('api.zaif.jp', '/api/1/last_price/btc_jpy')
         return {'JPY': Decimal(json['last_price'])}
 
+class Coingecko(ExchangeBase):
+    async def get_rates(self, ccy):
+        json = await self.get_json('api.coingecko.com', '/api/v3/coins/bring?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false')
+        return {'EUR': Decimal(json['market_data']['current_price']['eur']),
+                'USD': Decimal(json['market_data']['current_price']['usd']),
+                'RUB': Decimal(json['market_data']['current_price']['rub']),
+                'AUD': Decimal(json['market_data']['current_price']['aud']),
+                'BRL': Decimal(json['market_data']['current_price']['brl']),
+                'JPY': Decimal(json['market_data']['current_price']['jpy'])}
 
 def dictinvert(d):
     inv = {}
@@ -517,7 +526,7 @@ class FxThread(ThreadJob):
         return self.config.get("currency", "EUR")
 
     def config_exchange(self):
-        return self.config.get('use_exchange', 'BitcoinAverage')
+        return self.config.get('use_exchange', 'Coingecko')
 
     def show_history(self):
         return self.is_enabled() and self.get_history_config() and self.ccy in self.exchange.history_ccys()
