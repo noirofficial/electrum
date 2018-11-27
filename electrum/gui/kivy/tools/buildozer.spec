@@ -4,10 +4,10 @@
 title = Electrum
 
 # (str) Package name
-package.name = Electrum
+package.name = ElectrumNOIR
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.electrum
+package.domain = org.noirofficial.electrum
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -105,7 +105,7 @@ android.add_activities = org.electrum.qr.SimpleScannerActivity
 #android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
 
 # (str) XML file to include as an intent filters in <activity> tag
-android.manifest.intent_filters = electrum/gui/kivy/tools/bitcoin_intent.xml
+android.manifest.intent_filters = electrum/gui/kivy/tools/noir_intent.xml
 
 # (str) launchMode to set for the main activity
 android.manifest.launch_mode = singleTask
