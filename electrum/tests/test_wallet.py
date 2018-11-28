@@ -71,6 +71,7 @@ class TestWalletStorage(WalletTestCase):
             storage.put(key, value)
         storage.write()
 
+        contents = ""
         with open(self.wallet_path, "r") as f:
             contents = f.read()
         self.assertEqual(some_dict, json.loads(contents))
