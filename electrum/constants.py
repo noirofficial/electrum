@@ -47,8 +47,10 @@ class AbstractNet:
 class NoirMainnet(AbstractNet):
 
     TESTNET = False
+    WIF_PREFIX = 0xD0
     ADDRTYPE_P2PKH = 80
     ADDRTYPE_P2SH =  7
+    SEGWIT_HRP = "nor"
     GENESIS = "23911212a525e3d149fcad6c559c8b17f1e8326a272a75ff9bb315c8d96433ef"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
     DEFAULT_SERVERS = read_json('servers.json', {})
