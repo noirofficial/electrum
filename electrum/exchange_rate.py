@@ -389,7 +389,6 @@ class Coingecko(ExchangeBase):
     async def get_rates(self, ccy):
         json = await self.get_json('api.coingecko.com', '/api/v3/coins/bring?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false')
         return {'EUR': Decimal(json['market_data']['current_price']['eur']),
-                'BRL': Decimal(json['market_data']['current_price']['btc']),
                 'USD': Decimal(json['market_data']['current_price']['usd']),
                 'RUB': Decimal(json['market_data']['current_price']['rub']),
                 'AUD': Decimal(json['market_data']['current_price']['aud']),
