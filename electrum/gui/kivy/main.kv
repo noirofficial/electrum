@@ -187,7 +187,7 @@
     padding: '12dp', 0
     canvas.before:
         Color:
-            rgba: 0.192, .498, 0.745, 1
+            rgba: 0.282, 0, 0.152, 1
         BorderImage:
             source: 'atlas://electrum/gui/kivy/theming/light/card_bottom'
             size: self.size
@@ -195,26 +195,26 @@
 
 
 <AddressFilter@GridLayout>
-	item_height: dp(42)
-	item_width: dp(60)
-	foreground_color: .843, .914, .972, 1
-	cols: 1
-	canvas.before:
-		Color:
-			rgba: 0.192, .498, 0.745, 1
-		BorderImage:
-			source: 'atlas://electrum/gui/kivy/theming/light/card_bottom'
-			size: self.size
-			pos: self.pos
+    item_height: dp(42)
+    item_width: dp(60)
+    foreground_color: .843, .914, .972, 1
+    cols: 1
+    canvas.before:
+        Color:
+            rgba: 0.282, 0, 0.152, 1
+        BorderImage:
+            source: 'atlas://electrum/gui/kivy/theming/light/card_bottom'
+            size: self.size
+            pos: self.pos
 
 <SearchBox@GridLayout>
-	item_height: dp(42)
-	foreground_color: .843, .914, .972, 1
-	cols: 1
-	padding: '12dp', 0
-	canvas.before:
-		Color:
-			rgba: 0.192, .498, 0.745, 1
+    item_height: dp(42)
+    foreground_color: .843, .914, .972, 1
+    cols: 1
+    padding: '12dp', 0
+    canvas.before:
+        Color:
+            rgba: 0.282, 0, 0.152, 1
         BorderImage:
             source: 'atlas://electrum/gui/kivy/theming/light/card_bottom'
             size: self.size
@@ -242,7 +242,7 @@
         self.screen.show_menu(args[0]) if self.state == 'down' else self.screen.hide_menu()
     canvas.before:
         Color:
-            rgba: (0.192, .498, 0.745, 1) if self.state == 'down' else (0.15, 0.15, 0.17, 1)
+            rgba: (0.282, 0, 0.152, 1) if self.state == 'down' else (0.15, 0.15, 0.17, 1)
         Rectangle:
             size: self.size
             pos: self.pos
@@ -267,24 +267,24 @@
             pos: self.pos
 
 <AddressButton@Button>:
-	background_color: 1, .585, .878, 0
-	halign: 'center'
-	text_size: (self.width, None)
-	shorten: True
-	size_hint: 0.5, None
-	default_text: ''
-	text: self.default_text
-	padding: '5dp', '5dp'
-	height: '40dp'
-	text_color: self.foreground_color
-	disabled_color: 1, 1, 1, 1
-	foreground_color: 1, 1, 1, 1
-	canvas.before:
-		Color:
-			rgba: (0.9, .498, 0.745, 1) if self.state == 'down' else self.background_color
-		Rectangle:
-			size: self.size
-			pos: self.pos
+    background_color: 1, .585, .878, 0
+    halign: 'center'
+    text_size: (self.width, None)
+    shorten: True
+    size_hint: 0.5, None
+    default_text: ''
+    text: self.default_text
+    padding: '5dp', '5dp'
+    height: '40dp'
+    text_color: self.foreground_color
+    disabled_color: 1, 1, 1, 1
+    foreground_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: (0.9, .498, 0.745, 1) if self.state == 'down' else self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
 
 <KButton@Button>:
     size_hint: 1, None
@@ -349,7 +349,7 @@
     height: '60dp'
     canvas.before:
         Color:
-            rgba: (0.192, .498, 0.745, 1) if self.state == 'down' else (0.3, 0.3, 0.3, 0)
+            rgba: (0.282, 0, 0.152, 1) if self.state == 'down' else (0.3, 0.3, 0.3, 0)
         Rectangle:
             size: self.size
             pos: self.pos

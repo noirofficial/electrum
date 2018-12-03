@@ -13,7 +13,7 @@ from electrum.gui.kivy.i18n import _
 Builder.load_string('''
 <MenuItem@Button>
     background_normal: ''
-    background_color: (0.192, .498, 0.745, 1)
+    background_color: (0.282, 0, 0.152, 1)
     height: '48dp'
     size_hint: 1, None
 
