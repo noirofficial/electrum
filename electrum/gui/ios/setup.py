@@ -19,10 +19,10 @@ with io.open('README.rst', encoding='utf8') as readme:
 setup(
     name='Electrum',
     version=version,
-    description='A Bitcoin SPV Wallet',
+    description='A Noir SPV Wallet',
     long_description=long_description,
-    author='Electrum Technologies GmbH',
-    author_email='bauerj@bauerj.eu',
+    author='Noir Team',
+    author_email='team@noirofficial.org',
     license='MIT license',
     package_data={'': ["*.json", "*.po", "*.mo", "*.pot", "*.txt", "locale/*", "locale/*/*", "locale/*/*/*", "wordlist/*.txt", "*.png"]},
     include_package_data=True,
@@ -48,7 +48,7 @@ setup(
     options={
         'app': {
             'formal_name': 'Electrum',
-            'bundle': 'org.electrum'
+            'bundle': 'org.noirofficial'
         },
 
         # Mobile deployments
