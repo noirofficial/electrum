@@ -237,7 +237,7 @@ class SignDecryptVC(SignDecryptBase):
             print("address = ", address)
             addr = address
         except:
-            parent().show_error(_('Invalid Bitcoin address.'))
+            parent().show_error(_('Invalid Noir address.'))
             return
         if addr.kind != addr.ADDR_P2PKH:
             msg_sign = _("Signing with an address actually means signing with the corresponding "
@@ -283,7 +283,7 @@ class SignDecryptVC(SignDecryptBase):
         if bitcoin.is_address(address_str):
             address = address_str
         else:
-            parent().show_error(_('Invalid Bitcoin address.'))
+            parent().show_error(_('Invalid Noir address.'))
             return
         message = message.encode('utf-8')
         try:

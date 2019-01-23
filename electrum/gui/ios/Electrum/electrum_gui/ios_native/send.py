@@ -119,7 +119,7 @@ class SendVC(SendBase):
             else:
                 title = _("Invalid QR Code")
                 message = _(
-                    "The QR code does not appear to be a valid Bitcoin address or payment request.\nPlease try again.")
+                    "The QR code does not appear to be a valid Noir address or payment request.\nPlease try again.")
             reader.stopScanning()
             parent().show_error(
                 title=title,

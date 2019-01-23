@@ -786,11 +786,11 @@ class ElectrumGui(PrintError):
     def base_unit(self):
         assert self.decimal_point in [2, 5, 8]
         if self.decimal_point == 2:
-            return 'bits'
+            return 'uNOR'
         if self.decimal_point == 5:
-            return 'mBTC'
+            return 'mNOR'
         if self.decimal_point == 8:
-            return 'BTC'
+            return 'NOR'
         raise Exception('Unknown base unit')
 
     def get_fee_estimation(self):
@@ -945,7 +945,7 @@ class ElectrumGui(PrintError):
         if not self.wallet: return
         if self.wallet.is_watching_only():
             self.show_message(title=_("This is a watching-only wallet"),
-                              message=_("This means you will not be able to spend Bitcoins."),
+                              message=_("This means you will not be able to spend Noir."),
                               vc=vc,
                               onOk=onOk)
 
@@ -1057,8 +1057,8 @@ class ElectrumGui(PrintError):
             out = web.parse_URI(URI, self.on_pr)
         except:
             e = sys.exc_info()[1]
-            utils.NSLog("Invalid bitcoincash URI: %s, exception: %s", URI, str(e))
-            if showErr: self.show_error(_('Invalid bitcoincash URI:') + '\n' + str(e))
+            utils.NSLog("Invalid Noir URI: %s, exception: %s", URI, str(e))
+            if showErr: self.show_error(_('Invalid Noir URI:') + '\n' + str(e))
             return False
         r = out.get('r')
         sig = out.get('sig')

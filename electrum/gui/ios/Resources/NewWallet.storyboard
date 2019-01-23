@@ -3224,7 +3224,7 @@
     </scenes>
     <resources>
         <image name="Back_Chevron_White.png" width="7" height="13"/>
-        <image name="BeLectron_Insignia.png" width="154" height="138"/>
+        <image name="BeLectron_Insignia.png" width="72" height="72"/>
         <image name="ElectrumText.png" width="341" height="47"/>
         <image name="ElectrumTextFunkyBG.png" width="251" height="283"/>
         <image name="ElectrumTextFunkyBG_2.png" width="306" height="316"/>

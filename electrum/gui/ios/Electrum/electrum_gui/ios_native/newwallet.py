@@ -665,7 +665,7 @@ class RestoreWallet1(NewWalletSeed2):
                                                           _(
                                                               'If you are not sure what this is, leave this field unchanged.'),
                                                           _(
-                                                              "If you want the wallet to use legacy Bitcoin addresses use m/44'/0'/0'"),
+                                                              "If you want the wallet to use legacy Noir addresses use m/44'/0'/0'"),
                                                           _(
                                                               "If you want the wallet to use Segwit addresses use m/84'/0'/0'")]),
                                         onOk=onOk, placeholder=_('Derivation') + '...', text=default_derivation
@@ -816,10 +816,10 @@ class Import1(Import1Base):
                         + " " + _("To create a spending wallet, please enter a master private key (xprv/yprv/zprv)."))
 
         else:
-            titText = _("Import Bitcoin Addresses or Private Keys")
+            titText = _("Import Noir Addresses or Private Keys")
             infoText = _("Enter a list of private keys to create a regular spending wallet. " +
                          "Alternatively, you can create a 'watching-only' wallet by " +
-                         "entering a list of Bitcoin addresses.")
+                         "entering a list of Noir addresses.")
         self.tit.setText_withKerning_(titText, utils._kern)
         utils.uilabel_replace_attributed_text(lbl=self.info, font=UIFont.italicSystemFontOfSize_(14.0),
                                               text=infoText)
@@ -911,7 +911,7 @@ class Import1(Import1Base):
                 if bitcoin.is_address(w) or bitcoin.is_private_key(w):
                     ClearErrMsg()
                     return True
-            ErrMsg(_("You appear to have entered no valid Bitcoin addresses or private keys."))
+            ErrMsg(_("You appear to have entered no valid Noir addresses or private keys."))
         return False
 
     @objc_method
@@ -1156,7 +1156,7 @@ class Import2(Import2Base):
                         "A deterministic wallet will be created using the provided master public key. This wallet will be watching-only.")
                 else:
                     msg = _(
-                        "A deterministic wallet will be created using the provided master private key. This wallet will be able to freely send and receive Bitcoin.")
+                        "A deterministic wallet will be created using the provided master private key. This wallet will be able to freely send and receive Noir.")
             else:
                 ret = False
                 msg = _("An unknown error occurred. Cannot proceed.")

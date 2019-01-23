@@ -52,7 +52,7 @@ class PythonAppDelegate(UIResponder):
         eg = gui.ElectrumGui.gui
         ret = True
         if eg:
-            if scheme == 'bitcoincash':
+            if scheme == 'noir':
                 eg.open_bitcoincash_url(url_string)
             elif scheme == 'file':
                 data, filename = utils.nsurl_read_local_file(url)
