@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +23,7 @@
                 <subviews>
                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ElectronCashFunkyBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="2xI-m4-L5H">
                         <rect key="frame" x="62" y="172.5" width="251" height="283"/>
+                        <color key="tintColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="251" id="A2K-qO-YPL"/>
                             <constraint firstAttribute="height" constant="283" id="Svz-Gr-vQB"/>
@@ -50,7 +51,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="dNk-Ct-yXb" firstAttribute="centerX" secondItem="lHU-qS-a6s" secondAttribute="centerX" id="73m-xC-BbQ"/>
                     <constraint firstItem="Gfd-cp-cff" firstAttribute="centerY" secondItem="Zx0-e1-7tr" secondAttribute="centerY" constant="-30" id="Iyf-UB-8Hq"/>
@@ -65,6 +66,6 @@
     </objects>
     <resources>
         <image name="ElectronCashFunkyBG.png" width="251" height="283"/>
-        <image name="ElectrumText.png" width="341" height="112"/>
+        <image name="ElectrumText.png" width="341" height="47"/>
     </resources>
 </document>

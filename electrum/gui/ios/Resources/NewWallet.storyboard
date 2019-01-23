@@ -383,7 +383,7 @@
                                                     <constraint firstAttribute="height" constant="31" id="o8g-TN-NrW"/>
                                                     <constraint firstAttribute="width" constant="49" id="wpP-3g-lgS"/>
                                                 </constraints>
-                                                <color key="onTintColor" red="0.73333333329999995" green="1" blue="0.23137254900000001" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="onTintColor" red="0.28235294119999998" green="0.0" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="600" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Touch/Face ID" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="23K-Fc-RlZ">
                                                 <rect key="frame" x="175" y="6.5" width="106" height="18"/>
@@ -443,6 +443,7 @@
                                             <segment title="Legacy"/>
                                             <segment title="Segwit"/>
                                         </segments>
+                                        <color key="tintColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -913,7 +914,7 @@
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOe-Oa-APY">
                                 <rect key="frame" x="15" y="482" width="345" height="50"/>
-                                <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="999" constant="345" id="BB6-As-PQU"/>
                                     <constraint firstAttribute="height" constant="50" id="syD-Z0-fCD"/>
@@ -936,7 +937,7 @@
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ev-e7-jHU">
                                 <rect key="frame" x="15" y="542" width="345" height="50"/>
-                                <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="999" constant="345" id="J0l-uo-Gff"/>
                                     <constraint firstAttribute="height" constant="50" id="nGf-Gr-Slc"/>
@@ -959,7 +960,7 @@
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoH-8m-5KP">
                                 <rect key="frame" x="15" y="602" width="345" height="50"/>
-                                <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="999" constant="345" id="8UD-1Z-V4J"/>
                                     <constraint firstAttribute="height" constant="50" id="bKT-1i-Obc"/>
@@ -989,7 +990,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Create New Standard Wallet">
-                                    <color key="titleColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1030,7 +1031,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WSp-u0-SRs" firstAttribute="trailing" secondItem="6jd-51-cat" secondAttribute="trailing" constant="15" id="0eS-Wg-65E"/>
@@ -1088,14 +1089,14 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwh-QN-h2G">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="657"/>
-                                <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="e8A-0p-Ncz" kind="embed" id="llD-Ma-4qA"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Kwh-QN-h2G" firstAttribute="bottom" secondItem="lgh-6D-LXX" secondAttribute="bottom" constant="-10" id="D2f-kJ-zn2"/>
@@ -1154,7 +1155,7 @@
                                             <constraint firstAttribute="width" constant="208" id="lxK-8b-E6P"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Electrum is an SPV wallet for Bitcoin">
+                                            <fragment content="Noir Electrum is an SPV wallet for Noir">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <font key="NSFont" metaFont="system" size="15"/>
@@ -1183,7 +1184,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Get Started">
-                                    <color key="titleColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1195,7 +1196,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yud-pJ-xw6" firstAttribute="leading" secondItem="IiT-1r-Rlw" secondAttribute="leading" constant="64" id="0P0-Lc-DXE"/>
@@ -1588,7 +1589,7 @@
                                                     <constraint firstAttribute="height" constant="31" id="C6j-6j-bmR"/>
                                                     <constraint firstAttribute="width" constant="49" id="SW6-bI-c81"/>
                                                 </constraints>
-                                                <color key="onTintColor" red="0.73333333329999995" green="1" blue="0.23137254900000001" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="onTintColor" red="0.28235294119999998" green="0.0" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="600" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Touch/Face ID" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-3Y-LCp">
                                                 <rect key="frame" x="175" y="6.5" width="106" height="18"/>
@@ -2215,7 +2216,7 @@
                                                     <constraint firstAttribute="width" constant="49" id="BE9-rl-qIE"/>
                                                     <constraint firstAttribute="height" constant="31" id="vJM-Ek-ZGC"/>
                                                 </constraints>
-                                                <color key="onTintColor" red="0.73333333329999995" green="1" blue="0.23137254900000001" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="onTintColor" red="0.28235294119999998" green="0.0" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="600" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Touch/Face ID" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-wu-4lr">
                                                 <rect key="frame" x="175" y="6.5" width="106" height="18"/>
@@ -2389,7 +2390,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Bitcoin Cash Addresses or Private Keys" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4f-Sw-gz3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Noir Addresses or Private Keys" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4f-Sw-gz3">
                                 <rect key="frame" x="15" y="25" width="345" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="eYl-Gz-Lhs"/>
@@ -2846,7 +2847,7 @@
                                                     <constraint firstAttribute="height" constant="31" id="4Yk-mb-sDS"/>
                                                     <constraint firstAttribute="width" constant="49" id="XBR-Xy-NnA"/>
                                                 </constraints>
-                                                <color key="onTintColor" red="0.73333333329999995" green="1" blue="0.23137254900000001" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="onTintColor" red="0.28235294119999998" green="0.0" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="600" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Touch/Face ID" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FN2-h9-1pN">
                                                 <rect key="frame" x="175" y="6.5" width="106" height="18"/>
@@ -3074,7 +3075,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -3086,7 +3087,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mvt-WK-d9u" firstAttribute="top" secondItem="8Q0-2y-pgz" secondAttribute="top" constant="95" id="6bo-Py-1F8"/>
@@ -3178,7 +3179,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -3190,7 +3191,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KWv-be-VJJ" firstAttribute="trailing" secondItem="Zel-6V-tEV" secondAttribute="trailing" constant="15" id="2II-MB-8CR"/>

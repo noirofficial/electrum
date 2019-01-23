@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7b9-VO-tDA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8Tf-EI-wFx"/>
                             <constraint firstItem="7b9-VO-tDA" firstAttribute="centerY" secondItem="9h7-ZY-udZ" secondAttribute="centerY" constant="19.5" id="aKu-xS-3CD"/>
@@ -49,7 +49,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ElectrumText.png" width="341" height="112"/>
+        <image name="ElectrumText.png" width="341" height="47"/>
         <image name="ElectrumTextFunkyBG.png" width="251" height="283"/>
     </resources>
+    <color key="tintColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
 </document>
