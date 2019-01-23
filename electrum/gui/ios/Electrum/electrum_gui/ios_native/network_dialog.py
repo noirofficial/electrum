@@ -257,24 +257,24 @@ class NetworkDialogVC(UIViewController):
         utils.uilabel_replace_attributed_text(self.splitLbl, msg, self.splitAttrTxtOrig)
 
         # setup 'connected' data -- list of ConnData items
-        connected = []
-        for k, items in chains.items():
-            b = network.blockchains[k]
-            name = b.get_name()
-            secHeader = _("Connected node") + ", " + _("Height")
-            secItems = list()
-            extraData = None
-            if n_chains > 1:
-                secHeader = "(" + (name + '@%d' % b.get_checkpoint()) + ") " + _("Host") + ", " + _("Height")
-                extraData = [False, b.checkpoint, name]
-            for i in items:
-                star = ' *' if i == network.interface else ''
-                extraData = [True, i.server, '']  # if n_chains <= 1 else extraData
-                item = [i.host + star, '%d' % i.tip, extraData]
-                secItems.append(item)
-            section = ConnData(secHeader, secItems)
-            connected.append(section)
-        utils.nspy_put_byname(self, connected, 'connected')
+#connected = []
+#       for k, items in chains.items():
+#            b = network.blockchain[k]
+#            name = b.get_name()
+#            secHeader = _("Connected node") + ", " + _("Height")
+#            secItems = list()
+#            extraData = None
+#            if n_chains > 1:
+#                secHeader = "(" + (name + '@%d' % b.get_checkpoint()) + ") " + _("Host") + ", " + _("Height")
+#                extraData = [False, b.checkpoint, name]
+#            for i in items:
+#                star = ' *' if i == network.interface else ''
+#                extraData = [True, i.server, '']  # if n_chains <= 1 else extraData
+#                item = [i.host + star, '%d' % i.tip, extraData]
+#                secItems.append(item)
+#            section = ConnData(secHeader, secItems)
+#            connected.append(section)
+#        utils.nspy_put_byname(self, connected, 'connected')
 
         self.connectedTV.reloadData()
 
