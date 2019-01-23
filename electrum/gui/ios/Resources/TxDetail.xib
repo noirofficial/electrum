@@ -73,11 +73,11 @@
                                         <constraint firstAttribute="height" constant="40" id="7ED-yP-qVd"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <color key="textColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="textColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="deviceRGB"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="normalColor">
-                                            <color key="value" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="value" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="deviceRGB"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
                                             <color key="value" red="1" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -370,7 +370,7 @@
                     <subviews>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtt-Ib-DyR">
                             <rect key="frame" x="15" y="15" width="345" height="50"/>
-                            <color key="backgroundColor" red="0.33333333329999998" green="0.5450980392" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" priority="999" constant="345" id="EMI-Ma-5d4"/>
                             </constraints>

@@ -28,7 +28,7 @@ def main():
     for k,v in config_options.items():
         print("config[%s] = %s"%(str(k),str(v)))
 
-    constants.set_testnet()
+    constants.set_mainnet()
 
     config = SimpleConfig(config_options, read_user_dir_function = get_user_dir)
 

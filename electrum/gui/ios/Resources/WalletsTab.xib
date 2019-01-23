@@ -18,9 +18,8 @@
             <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" backIndicatorImage="Back_Chevron_White.png" backIndicatorTransitionMaskImage="Back_Chevron_White.png" id="6um-IK-2g2">
                 <rect key="frame" x="0.0" y="-44" width="375" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                <color key="barTintColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="barTintColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="deviceRGB"/>
                 <connections>
                     <outletCollection property="gestureRecognizers" destination="1Xa-I9-r22" appends="YES" id="S4V-cy-DGz"/>
                 </connections>
@@ -37,7 +36,8 @@
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTn-fY-y6D" userLabel="BlueBarTop">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.0" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.15294117647058825" green="0.0" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="9JB-Fw-gdf"/>
                                 </constraints>
@@ -326,7 +326,6 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jth-tL-V5a" userLabel="BlueBarBot">
                                     <rect key="frame" x="-848" y="12" width="2000" height="24"/>
-                                    <color key="backgroundColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="2000" id="UJ6-up-oYe"/>
                                         <constraint firstAttribute="height" constant="24" id="cVE-y3-pkg"/>
@@ -370,8 +369,6 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" red="0.16862745100000001" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="s5a-Kp-FHa" secondAttribute="bottom" id="2Da-es-5s2"/>

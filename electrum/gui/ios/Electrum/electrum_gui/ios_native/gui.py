@@ -1326,14 +1326,14 @@ class ElectrumGui(PrintError):
                 if not k:
                     k = keystore.from_seed(wallet_seed, seed_ext, False)
                     has_xpub = isinstance(k, keystore.Xpub)
-                    if has_xpub:
-                        from electrum.bitcoin import xpub_type
-                        t1 = xpub_type(k.xpub)
-                    if has_xpub and t1 not in ['standard', "p2wpkh"]:
-                        def compl() -> None: onFailure(_('Wrong key type') + ": '%s'" % t1)
+                    #if has_xpub:
+                    #    from electrum.bitcoin import xpub_type
+                    #    t1 = xpub_type(k.xpub)
+                    #if has_xpub and t1 not in ['standard', "p2wpkh"]:
+                    #    def compl() -> None: onFailure(_('Wrong key type') + ": '%s'" % t1)
 
-                        doDismiss(animated=False, compl=compl)
-                        return
+                    #    doDismiss(animated=False, compl=compl)
+                    #    return
 
                 path = os.path.join(wallets.WalletsMgr.wallets_dir(), wallet_name)
                 storage = WalletStorage(path, manual_upgrades=True)

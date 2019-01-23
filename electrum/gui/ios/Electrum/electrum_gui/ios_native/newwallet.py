@@ -703,11 +703,11 @@ class RestoreWallet1(NewWalletSeed2):
 
 def _AddKeystore(vc, k) -> bool:
     has_xpub = isinstance(k, keystore.Xpub)
-    if has_xpub:
-        t1 = bitcoin.xpub_type(k.xpub)
-        if t1 not in ['standard', 'p2wpkh']:
-            gui.ElectrumGui.gui.show_error(message=_('Wrong key type') + ": '%s'" % t1, vc=vc)
-            return False
+    #if has_xpub:
+        #t1 = bitcoin.xpub_type(k.xpub)
+        #if t1 not in ['standard', 'p2wpkh']:
+        #    gui.ElectrumGui.gui.show_error(message=_('Wrong key type') + ": '%s'" % t1, vc=vc)
+        #    return False
     keystores = _Params(vc).get('keystores', list())
     keystores.append(k)
     _SetParam(vc, 'keystores', keystores)

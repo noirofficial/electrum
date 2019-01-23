@@ -247,7 +247,7 @@ class NetworkDialogVC(UIViewController):
         self.statusLbl.text = str(status)
         if len(chains) > 1:
             chain = network.blockchain()
-            checkpoint = chain.get_checkpoint()
+            checkpoint = chain.get_checkpoints()
             name = chain.get_name()
             msg = _('Chain split detected at block %d') % checkpoint + '\n'
             msg += (_('You are following branch') if net_params.auto_connect else _('Your server is on branch')) + ' ' + name
