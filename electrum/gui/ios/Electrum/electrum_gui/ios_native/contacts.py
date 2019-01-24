@@ -734,13 +734,13 @@ def build_contact_tx_list(address: str) -> list:
                         ret.append(hentry)
                         seen.add(hentry.tx_hash)
                         break
-                outs = hentry.tx.get_outputs()
-                for x in outs:
-                    xa, dummy = x
-                    if xa == address and hentry.tx_hash not in seen:
-                        ret.append(hentry)
-                        seen.add(hentry.tx_hash)
-                        break
+                #outs = hentry.tx.get_outputs()
+                #    for x in outs:
+                #        xa, dummy = x
+                #        if xa == address and hentry.tx_hash not in seen:
+                #            ret.append(hentry)
+                #            seen.add(hentry.tx_hash)
+                #            break
     # print("build_contact_tx_list: address", address.to_ui_string(), "found", len(ret),"associated txs")
     return ret
 
