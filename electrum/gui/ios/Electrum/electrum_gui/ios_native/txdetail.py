@@ -226,7 +226,7 @@ class TxInputsOutputsTVC(TxInputsOutputsTVCBase):
         tv.deselectRowAtIndexPath_animated_(indexPath, True)
         tx = utils.nspy_get(self)
         isInput = tv.tag == self.tagin
-        x = tx.inputs()[indexPath.row] if isInput else tx.get_outputs()[indexPath.row]
+        x = tx.inputs()[indexPath.row]
         if isInput and x.get('type', None) == 'coinbase':
             return
         vc = self.txDetailVC
@@ -236,24 +236,24 @@ class TxInputsOutputsTVC(TxInputsOutputsTVCBase):
 
         def getData(x, isAddr, isInput) -> str:
             data = ""
-            if isAddr:
-                if isInput:
-                    addr = x['address']
-                    if addr is None:
-                        addr_text = _('unknown')
-                    else:
-                        addr_text = addr
-                    if not is_address(addr):
-                        # TODO Convert public key to address
-                        raise Exception("{} is not an address".format(addr))
-                else:
-                    addr, v = x
-                    addr_text = addr
-                data = addr_text
-            elif isInput:
-                prevout_hash = x.get('prevout_hash')
-                prevout_n = x.get('prevout_n')
-                data = prevout_hash[:]  # + ":%-4d" % prevout_n
+            #if isAddr:
+            #    if isInput:
+            #        addr = x['address']
+            #        if addr is None:
+            #            addr_text = _('unknown')
+            #        else:
+            #            addr_text = addr
+            #        if not is_address(addr):
+            #            # TODO Convert public key to address
+            #            raise Exception("{} is not an address".format(addr))
+            #    else:
+            #        addr, v = x
+            #        addr_text = addr
+            #    data = addr_text
+            #elif isInput:
+            #    prevout_hash = x.get('prevout_hash')
+            #    prevout_n = x.get('prevout_n')
+            #    data = prevout_hash[:]  # + ":%-4d" % prevout_n
             print("Data=%s" % str(data))
             return data
 
