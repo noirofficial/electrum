@@ -227,7 +227,7 @@ class NewWalletVC(NewWalletVCBase):
         _SetParam(self, 'WalletName', self.walletName.text)
         _SetParam(self, 'WalletPass', self.walletPw2.text)
         _SetParam(self, 'UseTouchID', bool((not self.touchId.isHidden()) and self.touchId.isOn()))
-        _SetParam(self, 'WalletType', "segwit" if self.compatMode.selectedSegmentIndex == 1 else "standard")
+        _SetParam(self, 'WalletType', "standard")
 
     @objc_method
     def prepareForSegue_sender_(self, segue, sender) -> None:
