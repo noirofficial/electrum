@@ -666,29 +666,30 @@ class ElectrumGui(PrintError):
         if not self.daemon.network or not self.daemon.network.is_connected():
             return
         self.print_error("Notifying GUI")
-        if len(self.tx_notifications) > 0:
-            if not self.wallet:
+        self.notify("New transaction received")
+            #if len(self.tx_notifications) > 0:
+            #if not self.wallet:
                 # spurious call, walled closed. kill all tx notifications since they are irrelevant at this point, and return
-                self.tx_notifications = list()
-                return
+                #self.tx_notifications = list()
+                #return
             # Combine the transactions if there are at least 2
-            num_txns = len(self.tx_notifications)
-            if num_txns >= 2:
-                total_amount = 0
-                for tx in self.tx_notifications:
-                    is_relevant, is_mine, v, fee = self.wallet.get_wallet_delta(tx)
-                    if v > 0:
-                        total_amount += v
-                self.notify(_("{} new transactions received: Total amount received in the new transactions {}")
-                            .format(num_txns, self.format_amount_and_units(total_amount)))
-                self.tx_notifications = []
-            else:
-                for tx in self.tx_notifications:
-                    if tx:
-                        self.tx_notifications.remove(tx)
-                        is_relevant, is_mine, v, fee = self.wallet.get_wallet_delta(tx)
-                        if v > 0:
-                            self.notify(_("New transaction received: {}").format(self.format_amount_and_units(v)))
+            #num_txns = len(self.tx_notifications)
+                #if num_txns >= 2:
+                #total_amount = 0
+                #for tx in self.tx_notifications:
+                    #    is_relevant, is_mine, v, fee = self.wallet.get_wallet_delta(tx)
+                    #if v > 0:
+                    #total_amount += v
+                    #self.notify(_("{} new transactions received: Total amount received in the new transactions {}")
+                    #.format(num_txns, self.format_amount_and_units(total_amount)))
+                    #self.tx_notifications = []
+                    #else:
+                #for tx in self.tx_notifications:
+                    #if tx:
+                        #self.tx_notifications.remove(tx)
+                        #is_relevant, is_mine, v, fee = self.wallet.get_wallet_delta(tx)
+                        #if v > 0:
+                            #self.notify(_("New transaction received: {}").format(self.format_amount_and_units(v)))
 
     def notify(self, message):
         lines = message.split(': ')
