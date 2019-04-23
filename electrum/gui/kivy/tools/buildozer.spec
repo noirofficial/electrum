@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Electrum
+title = Noir-Electrum
 
 # (str) Package name
-package.name = ElectrumNOIR
+package.name = Noir-Electrum
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.noirofficial.electrum
@@ -31,14 +31,14 @@ version.filename = %(source.dir)s/electrum/version.py
 #version = 1.9.8
 
 # (list) Application requirements
-requirements = python3, android, openssl, plyer, kivy==master, libffi, libsecp256k1
+requirements = python3, android, openssl, plyer, kivy==b47f669f44dbda4f463bcb7d2cada639f7fed3bc, libffi, libsecp256k1
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/gui/kivy/theming/splash.png
-presplash.filename = %(source.dir)s/icons/electrum_presplash.png
+presplash.filename = %(source.dir)s/electrum/gui/icons/electrum_presplash.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/icons/electrum_launcher.png
+icon.filename = %(source.dir)s/electrum/gui/icons/electrum_launcher.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
 orientation = portrait
@@ -57,7 +57,7 @@ android.permissions = INTERNET, CAMERA
 # (int) Android API to use
 android.api = 28
 
-# (int) Minimum API required (8 = Android 2.2 devices)
+# (int) Minimum API required. You will need to set the android.ndk_api to be as low as this value.
 android.minapi = 21
 
 # (int) Android SDK version to use
@@ -65,6 +65,9 @@ android.sdk = 24
 
 # (str) Android NDK version to use
 android.ndk = 14b
+
+# (int) Android NDK API to use (optional). This is the minimum API your app will support.
+android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 android.private_storage = True

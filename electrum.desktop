@@ -10,12 +10,13 @@ Icon=electrum
 Name[en_US]=Electrum Noir Wallet
 Name=Electrum Noir Wallet
 Categories=Finance;Network;
-StartupNotify=false
+StartupNotify=true
+StartupWMClass=electrum
 Terminal=false
 Type=Application
 MimeType=x-scheme-handler/noir;
-Actions=Testnet;
+#Actions=Testnet;
 
-[Desktop Action Testnet]
-Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; electrum --testnet %u"
-Name=Testnet mode
+#[Desktop Action Testnet]
+#Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; electrum --testnet %u"
+#Name=Testnet mode

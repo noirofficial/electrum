@@ -28,7 +28,7 @@ import time
 import traceback
 import json
 
-import requests
+import certifi
 import urllib.parse
 import aiohttp
 
@@ -49,7 +49,7 @@ from .network import Network
 REQUEST_HEADERS = {'Accept': 'application/bitcoin-paymentrequest', 'User-Agent': 'Electrum'}
 ACK_HEADERS = {'Content-Type':'application/bitcoin-payment','Accept':'application/bitcoin-paymentack','User-Agent':'Electrum'}
 
-ca_path = requests.certs.where()  # FIXME do we need to depend on requests here?
+ca_path = certifi.where()
 ca_list = None
 ca_keyID = None
 
@@ -78,7 +78,7 @@ async def get_payment_request(url: str) -> 'PaymentRequest':
                 async with session.get(url) as response:
                     resp_content = await response.read()
                     response.raise_for_status()
-                    # Guard against `bitcoin:`-URIs with invalid payment request URLs
+                    # Guard against `noir:`-URIs with invalid payment request URLs
                     if "Content-Type" not in response.headers \
                     or response.headers["Content-Type"] != "application/bitcoin-paymentrequest":
                         data = None
@@ -537,4 +537,7 @@ class InvoiceStore(object):
         return self.invoices.values()
 
     def unpaid_invoices(self):
-        return [ self.invoices[k] for k in filter(lambda x: self.get_status(x)!=PR_PAID, self.invoices.keys())]
+        return [self.invoices[k] for k in
+                filter(lambda x: self.get_status(x) not in (PR_PAID, None),
+                       self.invoices.keys())
+                ]
