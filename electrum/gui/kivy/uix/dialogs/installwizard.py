@@ -61,13 +61,13 @@ Builder.load_string('''
     bold: True
 
 <-WizardDialog>
-    text_color: .854, .925, .984, 1
+    text_color: 1, 1, 1, 1
     value: ''
     #auto_dismiss: False
     size_hint: None, None
     canvas.before:
         Color:
-            rgba: .239, .588, .882, 1
+            rgba: 0.282, 0, 0.152, 1
         Rectangle:
             size: Window.size
 
@@ -87,11 +87,11 @@ Builder.load_string('''
             height: self.minimum_height
             Label:
                 color: root.text_color
-                text: 'ELECTRUM'
+                text: 'NOIR ELECTRUM'
                 size_hint: 1, None
                 height: self.texture_size[1] if self.opacity else 0
                 font_size: '33sp'
-                font_name: 'electrum/gui/kivy/data/fonts/tron/Tr2n.ttf'
+                font_name: 'electrum/gui/kivy/data/fonts/Roboto.ttf'
         GridLayout:
             cols: 1
             id: crcontent
