@@ -8,17 +8,17 @@ import time
 import csv
 import decimal
 from decimal import Decimal
-import traceback
 from typing import Sequence, Optional
 
 from aiorpcx.curio import timeout_after, TaskTimeout, TaskGroup
 
 from .bitcoin import COIN
 from .i18n import _
-from .util import (PrintError, ThreadJob, make_dir, log_exceptions,
+from .util import (ThreadJob, make_dir, log_exceptions,
                    make_aiohttp_session, resource_path)
 from .network import Network
 from .simple_config import SimpleConfig
+from .logging import Logger
 
 
 DEFAULT_ENABLED = False
@@ -35,9 +35,10 @@ CCY_PRECISIONS = {'BHD': 3, 'BIF': 0, 'BYR': 0, 'CLF': 4, 'CLP': 0,
                   'VUV': 0, 'XAF': 0, 'XAU': 4, 'XOF': 0, 'XPF': 0}
 
 
-class ExchangeBase(PrintError):
+class ExchangeBase(Logger):
 
     def __init__(self, on_quotes, on_history):
+        Logger.__init__(self)
         self.history = {}
         self.quotes = {}
         self.on_quotes = on_quotes
@@ -74,12 +75,11 @@ class ExchangeBase(PrintError):
 
     async def update_safe(self, ccy):
         try:
-            self.print_error("getting fx quotes for", ccy)
+            self.logger.info(f"getting fx quotes for {ccy}")
             self.quotes = await self.get_rates(ccy)
-            self.print_error("received fx quotes")
+            self.logger.info("received fx quotes")
         except BaseException as e:
-            self.print_error("failed fx quotes:", repr(e))
-            # traceback.print_exc()
+            self.logger.info(f"failed fx quotes: {repr(e)}")
             self.quotes = {}
         self.on_quotes()
 
@@ -103,12 +103,11 @@ class ExchangeBase(PrintError):
     @log_exceptions
     async def get_historical_rates_safe(self, ccy, cache_dir):
         try:
-            self.print_error(f"requesting fx history for {ccy}")
+            self.logger.info(f"requesting fx history for {ccy}")
             h = await self.request_history(ccy)
-            self.print_error(f"received fx history for {ccy}")
+            self.logger.info(f"received fx history for {ccy}")
         except BaseException as e:
-            self.print_error(f"failed fx history: {repr(e)}")
-            #traceback.print_exc()
+            self.logger.info(f"failed fx history: {repr(e)}")
             return
         filename = os.path.join(cache_dir, self.name() + '_' + ccy)
         with open(filename, 'w', encoding='utf-8') as f:
@@ -304,12 +303,60 @@ class CoinGecko(ExchangeBase):
 
     async def get_rates(self, ccy):
         json = await self.get_json('api.coingecko.com', '/api/v3/coins/bring?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false')
-        return {'EUR': Decimal(json['market_data']['current_price']['eur']),
-                'USD': Decimal(json['market_data']['current_price']['usd']),
-                'RUB': Decimal(json['market_data']['current_price']['rub']),
+        return {'AED': Decimal(json['market_data']['current_price']['aed']),
+                'ARS': Decimal(json['market_data']['current_price']['ars']),
                 'AUD': Decimal(json['market_data']['current_price']['aud']),
+                'BCH': Decimal(json['market_data']['current_price']['bch']),
+                'BDT': Decimal(json['market_data']['current_price']['bdt']),
+                'BHD': Decimal(json['market_data']['current_price']['bhd']),
+                'BMD': Decimal(json['market_data']['current_price']['bmd']),
+                'BNB': Decimal(json['market_data']['current_price']['bnb']),
                 'BRL': Decimal(json['market_data']['current_price']['brl']),
-                'JPY': Decimal(json['market_data']['current_price']['jpy'])}
+                'BTC': Decimal(json['market_data']['current_price']['btc']),
+                'CAD': Decimal(json['market_data']['current_price']['cad']),
+                'CHF': Decimal(json['market_data']['current_price']['chf']),
+                'CLP': Decimal(json['market_data']['current_price']['clp']),
+                'CNY': Decimal(json['market_data']['current_price']['cny']),
+                'CZK': Decimal(json['market_data']['current_price']['czk']),
+                'DKK': Decimal(json['market_data']['current_price']['dkk']),
+                'EOS': Decimal(json['market_data']['current_price']['eos']),
+                'ETH': Decimal(json['market_data']['current_price']['eth']),
+                'EUR': Decimal(json['market_data']['current_price']['eur']),
+                'GBP': Decimal(json['market_data']['current_price']['gbp']),
+                'HKD': Decimal(json['market_data']['current_price']['hkd']),
+                'HUF': Decimal(json['market_data']['current_price']['huf']),
+                'IDR': Decimal(json['market_data']['current_price']['idr']),
+                'ILS': Decimal(json['market_data']['current_price']['ils']),
+                'INR': Decimal(json['market_data']['current_price']['inr']),
+                'JPY': Decimal(json['market_data']['current_price']['jpy']),
+                'KRW': Decimal(json['market_data']['current_price']['krw']),
+                'KWD': Decimal(json['market_data']['current_price']['kwd']),
+                'LKR': Decimal(json['market_data']['current_price']['lkr']),
+                'LTC': Decimal(json['market_data']['current_price']['ltc']),
+                'MMK': Decimal(json['market_data']['current_price']['mmk']),
+                'MXN': Decimal(json['market_data']['current_price']['mxn']),
+                'MYR': Decimal(json['market_data']['current_price']['myr']),
+                'NOK': Decimal(json['market_data']['current_price']['nok']),
+                'NZD': Decimal(json['market_data']['current_price']['nzd']),
+                'PHP': Decimal(json['market_data']['current_price']['php']),
+                'PKR': Decimal(json['market_data']['current_price']['pkr']),
+                'PLN': Decimal(json['market_data']['current_price']['pln']),
+                'RUB': Decimal(json['market_data']['current_price']['rub']),
+                'SAR': Decimal(json['market_data']['current_price']['sar']),
+                'SEK': Decimal(json['market_data']['current_price']['sek']),
+                'SGD': Decimal(json['market_data']['current_price']['sgd']),
+                'THB': Decimal(json['market_data']['current_price']['thb']),
+                'TRY': Decimal(json['market_data']['current_price']['try']),
+                'TWD': Decimal(json['market_data']['current_price']['twd']),
+                'USD': Decimal(json['market_data']['current_price']['usd']),
+                'VEF': Decimal(json['market_data']['current_price']['vef']),
+                'VND': Decimal(json['market_data']['current_price']['vnd']),
+                'XAG': Decimal(json['market_data']['current_price']['xag']),
+                'XAU': Decimal(json['market_data']['current_price']['xau']),
+                'XDR': Decimal(json['market_data']['current_price']['xdr']),
+                'XLM': Decimal(json['market_data']['current_price']['xlm']),
+                'XRP': Decimal(json['market_data']['current_price']['xrp']),
+                'ZAR': Decimal(json['market_data']['current_price']['zar'])}
 
     def history_ccys(self):
         # CoinGecko seems to have historical data for all ccys it supports
@@ -462,6 +509,7 @@ def get_exchanges_by_ccy(history=True):
 class FxThread(ThreadJob):
 
     def __init__(self, config: SimpleConfig, network: Network):
+        ThreadJob.__init__(self)
         self.config = config
         self.network = network
         if self.network:
@@ -564,7 +612,7 @@ class FxThread(ThreadJob):
 
     def set_exchange(self, name):
         class_ = globals().get(name) or globals().get(DEFAULT_EXCHANGE)
-        self.print_error("using exchange", name)
+        self.logger.info(f"using exchange {name}")
         if self.config_exchange() != name:
             self.config.set_key('use_exchange', name, True)
         self.exchange = class_(self.on_quotes, self.on_history)

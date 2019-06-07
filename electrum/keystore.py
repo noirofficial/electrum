@@ -36,13 +36,17 @@ from .bip32 import (convert_bip32_path_to_list_of_uint32, BIP32_PRIME,
 from .ecc import string_to_number, number_to_string
 from .crypto import (pw_decode, pw_encode, sha256, sha256d, PW_HASH_VERSION_LATEST,
                      SUPPORTED_PW_HASH_VERSIONS, UnsupportedPasswordHashVersion)
-from .util import (PrintError, InvalidPassword, WalletFileException,
-                   BitcoinException, bh2u, bfh, print_error, inv_dict)
+from .util import (InvalidPassword, WalletFileException,
+                   BitcoinException, bh2u, bfh, inv_dict)
 from .mnemonic import Mnemonic, load_wordlist, seed_type, is_seed
 from .plugin import run_hook
+from .logging import Logger
 
 
-class KeyStore(PrintError):
+class KeyStore(Logger):
+
+    def __init__(self):
+        Logger.__init__(self)
 
     def has_seed(self):
         return False
@@ -101,12 +105,12 @@ class Software_KeyStore(KeyStore):
     def may_have_password(self):
         return not self.is_watching_only()
 
-    def sign_message(self, sequence, message, password):
+    def sign_message(self, sequence, message, password) -> bytes:
         privkey, compressed = self.get_private_key(sequence, password)
         key = ecc.ECPrivkey(privkey)
         return key.sign_message(message, compressed)
 
-    def decrypt_message(self, sequence, message, password):
+    def decrypt_message(self, sequence, message, password) -> bytes:
         privkey, compressed = self.get_private_key(sequence, password)
         ec = ecc.ECPrivkey(privkey)
         decrypted = ec.decrypt_message(message)
@@ -554,12 +558,12 @@ class Hardware_KeyStore(KeyStore, Xpub):
     def unpaired(self):
         '''A device paired with the wallet was disconnected.  This can be
         called in any thread context.'''
-        self.print_error("unpaired")
+        self.logger.info("unpaired")
 
     def paired(self):
         '''A device paired with the wallet was (re-)connected.  This can be
         called in any thread context.'''
-        self.print_error("paired")
+        self.logger.info("paired")
 
     def can_export(self):
         return False
@@ -752,19 +756,21 @@ def is_address_list(text):
     return bool(parts) and all(bitcoin.is_address(x) for x in parts)
 
 
-def get_private_keys(text, *, allow_spaces_inside_key=True):
+def get_private_keys(text, *, allow_spaces_inside_key=True, raise_on_error=False):
     if allow_spaces_inside_key:  # see #1612
         parts = text.split('\n')
         parts = map(lambda x: ''.join(x.split()), parts)
         parts = list(filter(bool, parts))
     else:
         parts = text.split()
-    if bool(parts) and all(bitcoin.is_private_key(x) for x in parts):
+    if bool(parts) and all(bitcoin.is_private_key(x, raise_on_error=raise_on_error) for x in parts):
         return parts
 
 
-def is_private_key_list(text, *, allow_spaces_inside_key=True):
-    return bool(get_private_keys(text, allow_spaces_inside_key=allow_spaces_inside_key))
+def is_private_key_list(text, *, allow_spaces_inside_key=True, raise_on_error=False):
+    return bool(get_private_keys(text,
+                                 allow_spaces_inside_key=allow_spaces_inside_key,
+                                 raise_on_error=raise_on_error))
 
 
 is_mpk = lambda x: is_old_mpk(x) or is_xpub(x)
