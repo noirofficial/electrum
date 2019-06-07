@@ -130,6 +130,3 @@ class BaseCrashReporter:
 
     def get_wallet_type(self):
         raise NotImplementedError
-
-    def get_os_version(self):
-        raise NotImplementedError
