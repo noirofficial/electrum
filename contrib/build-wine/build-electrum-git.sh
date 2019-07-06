@@ -72,4 +72,4 @@ cd dist
 mv noir-electrum-setup.exe $NAME_ROOT-$VERSION-setup.exe
 cd ..
 
-sha256sum dist/electrum*.exe
+sha256sum dist/noir-electrum*.exe
